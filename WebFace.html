@@ -7,35 +7,29 @@
   <meta name="description" content="Early support, safe spaces, and trusted guidance for children and families. Protecting Children Together." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%230D8A3E'/%3E%3C/svg%3E">
 
-  <!-- Tailwind config BEFORE CDN -->
-  <script>
-    window.tailwind = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              dark:  '#0D8A3E',
-              mid:   '#1FA44C',
-              light: '#2EC158',
-              mint:  '#E9F8EF'
-            }
-          },
-          boxShadow: {
-            soft: '0 10px 25px 0 rgba(0,0,0,.08)',
-          }
-        }
-      }
-    };
-  </script>
+  <!-- Tailwind (keep defaults; we’ll force the green border via CSS below) -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
 
   <style>
+    /* Safety sizes in case utilities fail */
     img.header-logo { width: 96px; height: 96px; object-fit: contain; }
     img.hero-logo   { width: 320px; height: 320px; object-fit: contain; }
-    .metallic {
+
+    /* Metallic title sheen */
+    .metallic{
       background: linear-gradient(90deg,#0f8f40 0%,#56e98e 35%,#0e7f3b 60%,#56e98e 90%);
       -webkit-background-clip:text;background-clip:text;color:transparent;
       text-shadow:0 1px 1px rgba(0,0,0,.08);
+    }
+
+    /* ✅ Force the green box around the main logo (won’t fall back to grey) */
+    .hero-frame{
+      border: 6px solid #0D8A3E;      /* same green as the logo */
+      border-radius: 12px;             /* nice rounded corners */
+      padding: 24px;                   /* room for the caption inside */
+      display: inline-block;
+      box-shadow: 0 10px 25px 0 rgba(0,0,0,.08);
+      background: #ffffff;
     }
   </style>
 
@@ -60,8 +54,8 @@
 </head>
 <body class="antialiased text-slate-800">
 
-  <!-- Emergency banner (back above header) -->
-  <div class="bg-brand-dark text-white text-sm md:text-base">
+  <!-- ✅ Emergency banner restored ABOVE the header -->
+  <div class="bg-[#0D8A3E] text-white text-sm md:text-base">
     <div class="max-w-7xl mx-auto px-4 py-2 flex flex-col md:flex-row gap-2 md:items-center md:justify-between">
       <p class="font-medium">
         If a child is in immediate danger, call <span class="underline">999</span> (UK) or your local emergency number.
@@ -80,20 +74,21 @@
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex items-center justify-between h-24">
         <a href="#" class="flex items-center gap-4">
-          <img src="https://raw.githubusercontent.com/Tayte23/Mom-Sketch-Webite/main/Mum2.png"
-               alt="Newleaf Oasis Limited logo"
-               class="header-logo w-24 h-24 object-contain" />
+          <img
+            src="https://raw.githubusercontent.com/Tayte23/Mom-Sketch-Webite/main/Mum2.png"
+            alt="Newleaf Oasis Limited logo"
+            class="header-logo w-24 h-24 object-contain" />
           <span class="font-extrabold tracking-tight text-2xl md:text-3xl">
             Newleaf Oasis Limited
           </span>
         </a>
         <nav class="hidden md:flex gap-8 text-lg">
-          <a href="#about" class="hover:text-brand-dark">About</a>
-          <a href="#services" class="hover:text-brand-dark">Services</a>
-          <a href="#resources" class="hover:text-brand-dark">Resources</a>
-          <a href="#contact" class="hover:text-brand-dark">Contact</a>
+          <a href="#about" class="hover:text-[#0D8A3E]">About</a>
+          <a href="#services" class="hover:text-[#0D8A3E]">Services</a>
+          <a href="#resources" class="hover:text-[#0D8A3E]">Resources</a>
+          <a href="#contact" class="hover:text-[#0D8A3E]">Contact</a>
         </nav>
-        <a href="#get-help" class="hidden md:inline-flex bg-brand-mid hover:bg-brand-dark text-white px-6 py-3 rounded-xl shadow-soft text-lg">
+        <a href="#get-help" class="hidden md:inline-flex bg-[#1FA44C] hover:bg-[#0D8A3E] text-white px-6 py-3 rounded-xl shadow">
           Get Help
         </a>
         <button id="mnav" class="md:hidden p-2" aria-label="Open menu">
@@ -106,7 +101,7 @@
           <a href="#services" class="py-1">Services</a>
           <a href="#resources" class="py-1">Resources</a>
           <a href="#contact" class="py-1">Contact</a>
-          <a href="#get-help" class="inline-flex bg-brand-mid hover:bg-brand-dark text-white px-4 py-2 rounded-xl w-max">Get Help</a>
+          <a href="#get-help" class="inline-flex bg-[#1FA44C] hover:bg-[#0D8A3E] text-white px-4 py-2 rounded-xl w-max">Get Help</a>
         </div>
       </div>
     </div>
@@ -121,8 +116,8 @@
           Early support, safe spaces, and trusted guidance for children and families.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#get-help" class="px-6 py-3 rounded-xl bg-brand-mid hover:bg-brand-dark text-white shadow-soft">Get Help Now</a>
-          <a href="#refer" class="px-6 py-3 rounded-xl border border-brand-mid text-brand-mid hover:bg-mint">Refer a Child</a>
+          <a href="#get-help" class="px-6 py-3 rounded-xl bg-[#1FA44C] hover:bg-[#0D8A3E] text-white shadow">Get Help Now</a>
+          <a href="#refer" class="px-6 py-3 rounded-xl border border-[#1FA44C] text-[#1FA44C] hover:bg-[#E9F8EF]">Refer a Child</a>
         </div>
         <div class="mt-10 flex gap-6 items-center text-sm text-slate-500">
           <span class="uppercase tracking-wide">Trusted by partners</span>
@@ -130,20 +125,189 @@
         </div>
       </div>
 
-      <!-- Green bordered box -->
+      <!-- ✅ Green box around main logo, caption stays inside -->
       <div class="relative">
-        <div class="inline-block border-4 border-brand-dark rounded-lg p-6 shadow-soft">
-          <img src="https://raw.githubusercontent.com/Tayte23/Mom-Sketch-Webite/main/Mum2.png"
-               alt="Newleaf Oasis Limited emblem"
-               class="hero-logo mx-auto w-80 h-80 object-contain" />
+        <div class="hero-frame">
+          <img
+            src="https://raw.githubusercontent.com/Tayte23/Mom-Sketch-Webite/main/Mum2.png"
+            alt="Newleaf Oasis Limited emblem"
+            class="hero-logo mx-auto" />
           <p class="text-center mt-4 font-semibold" style="color:#2EC158">Protecting Children Together</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Everything else stays the same... -->
-  <!-- About, Services, Resources, Get Help, Partner & Referral, Newsletter, Contact, Policies, Footer -->
+  <!-- (The rest of your sections unchanged) -->
+
+  <section id="about" class="py-16 bg-[#E9F8EF]">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+      <div class="md:col-span-1">
+        <h2 class="text-3xl font-bold metallic">Who We Are</h2>
+        <p class="mt-3 text-slate-600">Newleaf Oasis Limited provides early intervention and safeguarding support, working hand-in-hand with families, schools, and community partners.</p>
+      </div>
+      <div class="md:col-span-2 grid sm:grid-cols-3 gap-6">
+        <div class="rounded-2xl bg-white p-6 shadow">
+          <h3 class="font-semibold">Our Mission</h3>
+          <p class="mt-2 text-sm text-slate-600">Create safe environments where children thrive and families feel supported.</p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow">
+          <h3 class="font-semibold">Values</h3>
+          <p class="mt-2 text-sm text-slate-600">Compassion, integrity, collaboration, and evidence-based practice.</p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow">
+          <h3 class="font-semibold">Safeguarding</h3>
+          <p class="mt-2 text-sm text-slate-600">Clear policies, trained staff, and transparent reporting processes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold metallic">How We Help</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow transition">
+          <h3 class="font-semibold">Family Support</h3>
+          <p class="mt-2 text-sm text-slate-600">Practical guidance, signposting, and advocacy.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow transition">
+          <h3 class="font-semibold">Mentoring</h3>
+          <p class="mt-2 text-sm text-slate-600">1-to-1 and group mentoring for young people.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow transition">
+          <h3 class="font-semibold">Training & Workshops</h3>
+          <p class="mt-2 text-sm text-slate-600">Safeguarding awareness and resilience building.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resources" class="py-16 bg-[#E9F8EF]">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold metallic">Resources</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <a href="#" class="group rounded-2xl bg-white p-6 shadow hover:shadow-lg transition block">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Safeguarding Policy (PDF)</h3>
+            <span class="text-sm text-[#1FA44C] group-hover:underline">Download</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Our approach and reporting process.</p>
+        </a>
+        <a href="#" class="group rounded-2xl bg-white p-6 shadow hover:shadow-lg transition block">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Family Support Guide</h3>
+            <span class="text-sm text-[#1FA44C] group-hover:underline">Download</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Practical tips and local services.</p>
+        </a>
+        <a href="#" class="group rounded-2xl bg-white p-6 shadow hover:shadow-lg transition block">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Partner Pack</h3>
+            <span class="text-sm text-[#1FA44C] group-hover:underline">Download</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">How to work with us & refer.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="get-help" class="py-16">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-bold metallic">Get Help</h2>
+      <p class="mt-3 text-slate-600">Tell us a safe way to reach you. We’ll respond promptly.</p>
+      <form class="mt-6 grid gap-4 bg-white border border-slate-200 rounded-2xl p-6 shadow" onsubmit="event.preventDefault(); alert('Thanks — we will be in touch shortly.');">
+        <label class="block">
+          <span class="text-sm font-medium">Your Name</span>
+          <input required type="text" class="mt-1 w-full rounded-xl border-slate-300 focus:border-[#1FA44C] focus:ring-[#1FA44C]" />
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium">Preferred contact (email or phone)</span>
+          <input required type="text" class="mt-1 w-full rounded-xl border-slate-300 focus:border-[#1FA44C] focus:ring-[#1FA44C]" />
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium">How can we help?</span>
+          <textarea rows="4" class="mt-1 w-full rounded-xl border-slate-300 focus:border-[#1FA44C] focus:ring-[#1FA44C]"></textarea>
+        </label>
+        <label class="inline-flex items-center gap-2">
+          <input type="checkbox" required class="rounded border-slate-300 text-[#1FA44C] focus:ring-[#1FA44C]" />
+          <span class="text-sm text-slate-600">I consent to you contacting me and handling my data per the <a href="#policies" class="underline">privacy policy</a>.</span>
+        </label>
+        <button class="mt-2 px-5 py-3 rounded-xl bg-[#1FA44C] hover:bg-[#0D8A3E] text-white w-max">Send Securely</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="refer" class="py-16 bg-[#E9F8EF]">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold metallic">Partner & Referral</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl bg-white p-6 shadow">
+          <h3 class="font-semibold">Make a Referral</h3>
+          <p class="mt-2 text-sm text-slate-600">Professionals can submit details via our secure form.</p>
+          <a href="#" class="mt-4 inline-flex px-4 py-2 rounded-xl bg-[#1FA44C] hover:bg-[#0D8A3E] text-white">Open Referral Form</a>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow">
+          <h3 class="font-semibold">Work With Us</h3>
+          <p class="mt-2 text-sm text-slate-600">We collaborate with schools, local authorities, and community services.</p>
+          <a href="#contact" class="mt-4 inline-flex px-4 py-2 rounded-xl border border-[#1FA44C] text-[#1FA44C] hover:bg-[#E9F8EF]">Contact Partnerships</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#E9F8EF]">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold metallic">Stay in the loop</h2>
+      <p class="mt-3 text-slate-600">Occasional updates — no spam. Unsubscribe anytime.</p>
+      <form class="mt-6 flex flex-col sm:flex-row gap-3 justify-center" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+        <input type="email" required placeholder="you@example.com" class="w-full sm:w-96 rounded-xl border-slate-300 focus:border-[#1FA44C] focus:ring-[#1FA44C]" />
+        <button class="px-6 py-3 rounded-xl bg-[#1FA44C] hover:bg-[#0D8A3E] text-white">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-3xl font-bold metallic">Contact</h2>
+        <ul class="mt-4 space-y-2 text-slate-700">
+          <li><strong>Email:</strong> <a class="text-[#1FA44C] underline" href="mailto:info@example.org">info@example.org</a></li>
+          <li><strong>Phone:</strong> <a class="text-[#1FA44C] underline" href="tel:+441234567890">+44 1234 567 890</a></li>
+          <li><strong>Hours:</strong> Mon–Fri, 9am–5pm</li>
+          <li><strong>Address:</strong> Your address here</li>
+        </ul>
+      </div>
+      <form class="bg-white border border-slate-200 rounded-2xl p-6 shadow grid gap-4" onsubmit="event.preventDefault(); alert('Message sent!');">
+        <label class="block">
+          <span class="text-sm font-medium">Name</span>
+          <input type="text" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-[#1FA44C] focus:ring-[#1FA44C]" />
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium">Email</span>
+          <input type="email" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-[#1FA44C] focus:ring-[#1FA44C]" />
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium">Message</span>
+          <textarea rows="4" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-[#1FA44C] focus:ring-[#1FA44C]"></textarea>
+        </label>
+        <button class="px-5 py-3 rounded-xl bg-[#1FA44C] hover:bg-[#0D8A3E] text-white w-max">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="policies" class="py-10 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 text-sm text-slate-600">
+      <p><strong>Safeguarding • Privacy • Cookies • Accessibility</strong> — add your policies and statements here.</p>
+    </div>
+  </section>
+
+  <footer class="py-8 border-t">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-slate-500">&copy; <span id="year"></span> Newleaf Oasis Limited. All rights reserved.</p>
+      <p class="text-sm" style="color:#2EC158">Protecting Children Together</p>
+    </div>
+  </footer>
 
   <script>
     const btn = document.getElementById('mnav');
