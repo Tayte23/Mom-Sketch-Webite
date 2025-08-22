@@ -7,24 +7,21 @@
   <meta name="description" content="Early support, safe spaces, and trusted guidance for children and families. Protecting Children Together." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%230D8A3E'/%3E%3C/svg%3E">
 
-  <!-- Tailwind config must be defined BEFORE the CDN script -->
+  <!-- Tailwind config BEFORE CDN -->
   <script>
     window.tailwind = {
       theme: {
         extend: {
           colors: {
             brand: {
-              dark: '#0D8A3E',   // deep emerald
-              mid:  '#1FA44C',   // primary
-              light:'#2EC158',   // leaf green
-              mint: '#E9F8EF'    // pale background accent
+              dark:  '#0D8A3E',
+              mid:   '#1FA44C',
+              light: '#2EC158',
+              mint:  '#E9F8EF'
             }
           },
           boxShadow: {
             soft: '0 10px 25px 0 rgba(0,0,0,.08)',
-          },
-          backgroundImage: {
-            'metal-green': 'linear-gradient(135deg,#0f8f40 0%,#32c75e 40%,#0c7a3a 60%,#4edd82 100%)',
           }
         }
       }
@@ -32,16 +29,16 @@
   </script>
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
 
-  <!-- Fallback so images never fill the page even if Tailwind fails -->
   <style>
-    img.header-logo { width: 96px; height: 96px; object-fit: contain; }   /* ~3× old 32px */
-    img.hero-logo   { width: 224px; height: 224px; object-fit: contain; } /* tidy big but safe */
-    .metallic {
+    /* Header & hero logo safety sizes (if Tailwind fails, we still look OK) */
+    img.header-logo { width: 96px; height: 96px; object-fit: contain; }
+    img.hero-logo   { width: 320px; height: 320px; object-fit: contain; }
+
+    /* Metallic title sheen */
+    .metallic{
       background: linear-gradient(90deg,#0f8f40 0%,#56e98e 35%,#0e7f3b 60%,#56e98e 90%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 1px 1px rgba(0,0,0,.08);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      text-shadow:0 1px 1px rgba(0,0,0,.08);
     }
   </style>
 
@@ -49,7 +46,7 @@
   <meta property="og:title" content="Newleaf Oasis Limited" />
   <meta property="og:description" content="Protecting Children Together." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/Tayte23/Mom-Sketch-Webite/main/Mum%201.png" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/Tayte23/Mom-Sketch-Webite/main/Mum2.png" />
 
   <!-- Schema -->
   <script type="application/ld+json">
@@ -59,7 +56,7 @@
     "name":"Newleaf Oasis Limited",
     "slogan":"Protecting Children Together",
     "url":"https://example.org",
-    "logo":"https://raw.githubusercontent.com/Tayte23/Mom-Sketch-Webite/main/Mum%201.png",
+    "logo":"https://raw.githubusercontent.com/Tayte23/Mom-Sketch-Webite/main/Mum2.png",
     "sameAs":[]
   }
   </script>
@@ -75,26 +72,26 @@
       <a href="#get-help" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 rounded-full px-3 py-1">
         Get Help Now
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
         </svg>
       </a>
     </div>
   </div>
 
-  <!-- Header (bigger height + larger nav text + larger logo) -->
+  <!-- Header (keep logo size; no box) -->
   <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="flex items-center justify-between h-24"> <!-- taller header -->
+      <div class="flex items-center justify-between h-24">
         <a href="#" class="flex items-center gap-4">
           <img
-            src="https://raw.githubusercontent.com/Tayte23/Mom-Sketch-Webite/main/Mum%201.png"
+            src="https://raw.githubusercontent.com/Tayte23/Mom-Sketch-Webite/main/Mum2.png"
             alt="Newleaf Oasis Limited logo"
             class="header-logo w-24 h-24 object-contain" />
           <span class="font-extrabold tracking-tight text-2xl md:text-3xl">
             Newleaf Oasis Limited
           </span>
         </a>
-        <nav class="hidden md:flex gap-8 text-lg"> <!-- ~2x bigger -->
+        <nav class="hidden md:flex gap-8 text-lg">
           <a href="#about" class="hover:text-brand-dark">About</a>
           <a href="#services" class="hover:text-brand-dark">Services</a>
           <a href="#resources" class="hover:text-brand-dark">Resources</a>
@@ -136,16 +133,16 @@
           <div class="h-px flex-1 bg-slate-200"></div>
         </div>
       </div>
+
+      <!-- Right: GREEN BORDER BOX around the logo + caption (inside the box) -->
       <div class="relative">
-        <!-- tighter frame around the logo -->
-        <div class="rounded-3xl p-1 bg-metal-green shadow-soft">
-          <div class="rounded-2xl bg-white p-6 border border-slate-100">
-            <img
-              src="https://raw.githubusercontent.com/Tayte23/Mom-Sketch-Webite/main/Mum%201.png"
-              alt="Newleaf Oasis Limited emblem"
-              class="hero-logo w-56 h-56 object-contain mx-auto" />
-            <p class="text-center mt-4 font-semibold" style="color:#2EC158">Protecting Children Together</p>
-          </div>
+        <div class="inline-block border-4 border-brand-mid rounded-lg p-6 shadow-soft">
+          <!-- Make the image roughly the size of your blue box -->
+          <img
+            src="https://raw.githubusercontent.com/Tayte23/Mom-Sketch-Webite/main/Mum2.png"
+            alt="Newleaf Oasis Limited emblem"
+            class="hero-logo mx-auto w-80 h-80 object-contain" />
+          <p class="text-center mt-4 font-semibold" style="color:#2EC158">Protecting Children Together</p>
         </div>
       </div>
     </div>
