@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Newleaf Oasis Limited — Protecting Children Together</title>
+  <meta name="description" content="Early support, safe spaces, and trusted guidance for children and families. Protecting Children Together." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%230D8A3E'/%3E%3C/svg%3E">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+
+  <style>
+    img.header-logo { width: 96px; height: 96px; object-fit: contain; }
+    img.hero-logo   { width: 320px; height: 320px; object-fit: contain; }
+
+    .metallic{
+      background: linear-gradient(90deg,#0f8f40 0%,#56e98e 35%,#0e7f3b 60%,#56e98e 90%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow:0 1px 1px rgba(0,0,0,.08);
+    }
+
+    /* ✅ Green border + gradient fill */
+    .hero-frame{
+      border: 6px solid #0D8A3E;
+      border-radius: 12px;
+      padding: 24px;
+      display: inline-block;
+      box-shadow: 0 10px 25px 0 rgba(0,0,0,.08);
+      background: linear-gradient(180deg, #ffffff 0%, #E9F8EF 100%);
+    }
+  </style>
+</head>
+<body class="antialiased text-slate-800">
+
+  <!-- ✅ Emergency banner -->
+  <div class="bg-[#0D8A3E] text-white text-sm md:text-base">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex flex-col md:flex-row gap-2 md:items-center md:justify-between">
+      <p class="font-medium">
+        If a child is in immediate danger, call <span class="underline">999</span> (UK) or your local emergency number.
+      </p>
+      <a href="#get-help" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 rounded-full px-3 py-1">
+        Get Help Now →
+      </a>
+    </div>
+  </div>
+
+  <!-- ✅ Header -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between h-24">
+        <a href="#" class="flex items-center gap-4">
+          <img src="https://raw.githubusercontent.com/Tayte23/Mom-Sketch-Webite/main/Mum2.png"
+               alt="Newleaf Oasis Limited logo"
+               class="header-logo w-24 h-24 object-contain" />
+          <span class="font-extrabold tracking-tight text-2xl md:text-3xl">
+            Newleaf Oasis Limited
+          </span>
+        </a>
+        <nav class="hidden md:flex gap-8 text-lg">
+          <a href="#about" class="hover:text-[#0D8A3E]">About</a>
+          <a href="#services" class="hover:text-[#0D8A3E]">Services</a>
+          <a href="#resources" class="hover:text-[#0D8A3E]">Resources</a>
+          <a href="#contact" class="hover:text-[#0D8A3E]">Contact</a>
+        </nav>
+        <a href="#get-help" class="hidden md:inline-flex bg-[#1FA44C] hover:bg-[#0D8A3E] text-white px-6 py-3 rounded-xl shadow">
+          Get Help
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ✅ Hero -->
+  <section class="relative bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight metallic">
+          Protecting Children Together
+        </h1>
+        <p class="mt-5 text-lg text-slate-600">
+          Early support, safe spaces, and trusted guidance for children and families.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#get-help" class="px-6 py-3 rounded-xl bg-[#1FA44C] hover:bg-[#0D8A3E] text-white shadow">Get Help Now</a>
+          <a href="#refer" class="px-6 py-3 rounded-xl border border-[#1FA44C] text-[#1FA44C] hover:bg-[#E9F8EF]">Refer a Child</a>
+        </div>
+      </div>
+
+      <!-- ✅ Gradient background box -->
+      <div class="relative">
+        <div class="hero-frame">
+          <img src="https://raw.githubusercontent.com/Tayte23/Mom-Sketch-Webite/main/Mum2.png"
+               alt="Newleaf Oasis Limited emblem"
+               class="hero-logo mx-auto" />
+          <p class="text-center mt-4 font-semibold" style="color:#2EC158">
+            Protecting Children Together
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
